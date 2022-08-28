@@ -10,8 +10,14 @@ inputs:
     required: true
   api_token:
     description: 'A Cloudflare API Token'
-    required: true
-  paths:
+    required: false
+  api_key:
+    description: 'A Cloudflare API Key'
+    required: false
+  email:
+    description: 'The email address you registered your Cloudflare account with'
+    required: false
+  purge_urls:
     description: ''
     required: false
 
