@@ -1,3 +1,5 @@
 .idea
 node_modules
 lib
+# Prevent accidental commit of dist files
+dist

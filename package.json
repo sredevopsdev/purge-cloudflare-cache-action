@@ -4,11 +4,10 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "tsc",
+    "dev": "ncc build src/index.ts --watch --source-map",
+    "build": "ncc build src/index.ts --minify",
     "format": "prettier --write '**/*.ts'",
-    "format-check": "prettier --check '**/*.ts'",
-    "package": "ncc build -s -m",
-    "all": "npm run build && npm run format && npm run package"
+    "format-check": "prettier --check '**/*.ts'"
   },
   "license": "MIT",
   "dependencies": {

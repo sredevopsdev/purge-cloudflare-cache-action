@@ -1,0 +1,27 @@
+name: Build
+on:
+  push:
+    branches: ['main']
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: npm
+      - run: npm install
+      - run: npm run build
+
+      - name: Git Auto Commit
+        uses: stefanzweifel/git-auto-commit-action@v4.14.1
+        with:
+          file_pattern: dist
+          # The dist directory is added in .gitignore
+          push_options: '--force'
+          commit_message: Compile output for commit $(git rev-parse --short "$GITHUB_SHA")
