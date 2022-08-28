@@ -22,4 +22,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4.14.1
         with:
           file_pattern: dist
-          commit_message: Compile output for commit $(git rev-parse --short "$GITHUB_SHA")
+          commit_message: Compile output for commit $GITHUB_SHA
