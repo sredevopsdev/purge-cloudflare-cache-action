@@ -11,22 +11,11 @@ const apiKey = core.getInput('api_key');
 
 checkAuthInput(apiToken, email, apiKey);
 
-const filesInput = core.getInput('purge_urls');
-
+const files = core.getInput('files');
 let filesArray: string[] = [];
 
-if (filesInput) {
-  try {
-    filesArray = JSON.parse(filesInput);
-  } catch (error) {
-    core.setFailed(
-      'Error while parsing the file list. Make sure the file list is formatted correctly!'
-    );
-
-    if (error instanceof Error) {
-      core.setFailed(error.message);
-    }
-  }
+if (files.length) {
+  filesArray = files.split(' ');
 }
 
 const client = new Cloudflare({
@@ -38,13 +27,13 @@ const client = new Cloudflare({
 client.zones
   .purgeCache(zoneId, {
     //@ts-ignore missing purge_everything type - https://github.com/cloudflare/node-cloudflare/pull/107
-    purge_everything: filesArray.length === 0
-    // files: filesArray.length === 0 ? undefined : filesArray
+    purge_everything: filesArray.length === 0 ? true : undefined,
+    files: filesArray.length === 0 ? undefined : filesArray
   })
   .then(response => {
     console.log(response);
   })
   .catch(error => {
-    core.debug(error.toString());
+    console.error(error);
     core.setFailed(error.message);
   });

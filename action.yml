@@ -17,8 +17,8 @@ inputs:
   email:
     description: 'The email address you registered your Cloudflare account with'
     required: false
-  purge_urls:
-    description: ''
+  files:
+    description: 'A space seperated list of URLs to purge'
     required: false
 
 runs:
