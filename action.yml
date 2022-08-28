@@ -1,20 +1,20 @@
-name: "Purge Cloudflare cache"
+name: 'Purge Cloudflare cache'
 description: "Purge a zone's cache via the Cloudflare API"
 branding:
-  icon: "cloud"
-  color: "orange"
+  icon: 'cloud'
+  color: 'orange'
 
 inputs:
   zone:
     description: "The Zone ID of your domain, which can be found in the right sidebar of your domain's overview page on the Cloudflare dashboard"
     required: true
   api_token:
-    description: "A Cloudflare API Token"
+    description: 'A Cloudflare API Token'
     required: true
   paths:
-    description: ""
+    description: ''
     required: false
 
 runs:
-  using: "node16"
-  main: "index.js"
+  using: 'node16'
+  main: 'dist/index.js'
