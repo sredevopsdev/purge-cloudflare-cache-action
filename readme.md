@@ -4,7 +4,7 @@
 
 This action uses [Cloudflare's API](https://api.cloudflare.com/#zone-purge-all-files) to purge their cache of your website. It can be helpful after deploying a new version.
 
-What makes this action different from similar ones is that it allows you to clean URL caches based on the XML sitemap. This way, if you want to clean specific files, you don't have to remember to update the workflow every time.
+What makes this action different from similar ones is that it allows you to clean URL caches based on the XML sitemap. This way, if you want to purge specific files, you don't have to remember to update the workflow every time.
 
 
 ## Usage
