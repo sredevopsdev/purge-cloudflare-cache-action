@@ -1,0 +1,26 @@
+{
+  "name": "purge-cloudflare-cache-action",
+  "main": "lib/index.js",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write '**/*.ts'",
+    "format-check": "prettier --check '**/*.ts'",
+    "package": "ncc build -s -m",
+    "all": "npm run build && npm run format && npm run package"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.9.1",
+    "@types/cloudflare": "^2.7.9",
+    "cloudflare": "^2.9.1"
+  },
+  "devDependencies": {
+    "@tsconfig/node16": "^1.0.3",
+    "@types/node": "^16.11.56",
+    "@vercel/ncc": "^0.34.0",
+    "prettier": "^2.7.1",
+    "typescript": "^4.8.2"
+  }
+}
