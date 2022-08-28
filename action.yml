@@ -1,4 +1,4 @@
-name: 'Purge Cloudflare cache'
+name: 'Purge Cloudflare cache Action'
 description: "Purge a zone's cache via the Cloudflare API"
 branding:
   icon: 'cloud'
