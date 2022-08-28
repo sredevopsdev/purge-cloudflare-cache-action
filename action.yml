@@ -20,6 +20,9 @@ inputs:
   files:
     description: 'A space seperated list of URLs to purge'
     required: false
+  sitemap:
+    description: 'XML sitemap URL. You can use this instead of manually providing a list of files'
+    required: false
 
 runs:
   using: 'node16'
