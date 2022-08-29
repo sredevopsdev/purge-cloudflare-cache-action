@@ -15,7 +15,7 @@ What makes this action different from similar ones is that it allows you to clea
 ```yaml   
 #...      
   - name: Purge cache
-    uses: rafaucau/purge-cloudflare-cache-action@0.0.1
+    uses: rafaucau/purge-cloudflare-cache-action@0.0.2
     with:
       # Zone is required by both authentication methods
       zone: ${{ secrets.CLOUDFLARE_ZONE }}
@@ -32,7 +32,6 @@ What makes this action different from similar ones is that it allows you to clea
       # [Optional] XML sitemap URL
       # Do not use this option if you want to purge everything!
       # If your sitemap is large, you'd better not use this option and purge everything
-      # Currently, the limit is 30
       sitemap: https://example.com/sitemap.xml
 #... 
 ```
