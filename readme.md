@@ -1,15 +1,16 @@
 # Cloudflare Purge Cache Action
 
-> 🚧 Work in progress
-
 This action uses [Cloudflare's API](https://api.cloudflare.com/#zone-purge-all-files) to purge their cache of your website. It can be helpful after deploying a new version.
 
 What makes this action different from similar ones is that it allows you to clean URL caches based on the XML sitemap. This way, if you want to purge specific files, you don't have to remember to update the workflow every time.
 
-
-## Usage
+## Configuration
+Creating API tokens: https://developers.cloudflare.com/api/tokens/create/
 
 **All sensitive information like zones and tokens should be stored with [encrypted secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets).**
+## Usage
+
+
 
 `your-workflow.yml`
 ```yaml   
